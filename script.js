@@ -40,7 +40,7 @@ document.getElementById("img2").addEventListener("click", function () {
 });
 
 
-//third image
+
 
 const img3 = document.getElementById("img3");
 const diceImg = document.createElement("img");
@@ -51,9 +51,11 @@ document.body.appendChild(diceImg);
 
 let sum = 0;
 let count = 0;
+let attempts = 2;
 
 img3.addEventListener("click", function () {
     if (currentImage === 3) {
+
         diceImg.style.display = "block";
         this.style.pointerEvents = "none";
     }
@@ -67,25 +69,28 @@ diceImg.addEventListener("click", function () {
     if (count === 3) {
         if (sum > 10) {
             document.getElementById("img4").style.display = "block";
-        } else {
+        } else if (attempts > 0) {
             alert("Score: " + sum + "\nTry again after scoring more than 10.");
             sum = 0;
             count = 0;
+            attempts--;
+        } else {
+            alert("You have used up all of your attempts. Please start over.");
+            sum = 0;
+            count = 0;
+            attempts = 2;
         }
     }
 });
-
 
 // fourth image
 
 document.getElementById("img4").addEventListener("click", function () {
     if (currentImage === 4) {
-        // perform action for fourth image
         this.style.pointerEvents = "none";
         const coupon = Math.random().toString().slice(2, 14);
         alert("Your coupon code is: " + coupon);
     }
 
 });
-
 
