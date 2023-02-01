@@ -1,0 +1,15 @@
+.gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  width: 25%;
+}
+
+img {
+  width: 100%;
+}
+.form-container {
+  display: none;
+}
