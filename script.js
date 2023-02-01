@@ -55,8 +55,11 @@ let attempts = 2;
 
 img3.addEventListener("click", function () {
     if (currentImage === 3) {
+        if (count === 0) {
+            diceImg.style.display = "block";
+        }
 
-        diceImg.style.display = "block";
+
         this.style.pointerEvents = "none";
     }
 
@@ -75,7 +78,7 @@ diceImg.addEventListener("click", function () {
             count = 0;
             attempts--;
         } else {
-            alert("You have used up all of your attempts. Please start over.");
+            alert("Bad Luck. You have used up all of your attempts. Please start over.");
             sum = 0;
             count = 0;
             attempts = 2;
@@ -88,8 +91,15 @@ diceImg.addEventListener("click", function () {
 document.getElementById("img4").addEventListener("click", function () {
     if (currentImage === 4) {
         this.style.pointerEvents = "none";
-        const coupon = Math.random().toString().slice(2, 14);
-        alert("Your coupon code is: " + coupon);
+        if (sum > 10) {
+            const coupon = Math.random().toString().slice(2, 14);
+            alert("Your coupon code is: " + coupon);
+            const congratImg = document.createElement("img");
+            congratImg.src = "/images/congrats.jpg";
+            congratImg.style.width = "25%";
+            document.body.appendChild(congratImg);
+        }
+
     }
 
 });
