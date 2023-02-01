@@ -4,51 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>F2 Module Test</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="gallery">
-      <div class="image-container">
-        <img id="img1" src="/images/image1.png" alt="Image 1" />
-      </div>
-      <div class="image-container">
-        <img id="img2" src="/images/image2.png" alt="Image 2" />
-      </div>
-      <div class="image-container">
-        <img id="img3" src="/images/image3.png" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img id="img4" src="/images/image4.png" alt="Image 4" />
-      </div>
+      <img onclick="p1c()" id="pic1" src="/images/image1.png" />
+      <img onclick="p2c()" id="pic2" src="/images/image2.png" />
+      <img onclick="p3c()" id="pic3" src="/images/image3.png" />
+      <img id="pic4" onclick="p4c()" src="/images/image4.png" />
+    </div>
+    <div class="form form1">
+      <input type="text" id="f1" placeholder="Name*" />
+      <input type="email" id="f2" placeholder="Email*" />
+      <input type="text" id="f3" placeholder="Username*" />
+      <button id="submit" onclick="sb()">Submit</button>
     </div>
 
-    <div class="form-container" id="formContainer">
-        <form id="form">
-          <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name">
-          </div>
-          <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email">
-          </div>
-          <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username">
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+    <div class="form form2">
+      <h2 id="n"></h2>
+      <h2 id="u"></h2>
+    </div>
 
-      <div class="display-container" id="display">
-        <p id="user-info"></p>
-      </div>
+    <div class="form form3">
+      <img src="/images/dice.png" id="d" onclick="d()" alt="" class="" />
+      <button id="f" onclick="f()">Total</button>
+      <h2 id="e"></h2>
+      <button id="try" onclick="tr()">Try again</button>
+    </div>
 
+    <div class="form form4">
+      <img src="/images/congrats.jpg" id="d" alt="" class="" />
+      <h2 id="g"></h2>
+    </div>
 
-
-      
-      
-    <script src="script.js"></script>
+    <div class="form form5">
+      <h2 id="m">Bad Luck</h2>
+    </div>
   </body>
+  <script src="script.js"></script>
 </html>
